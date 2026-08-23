@@ -1,101 +1,69 @@
 /* ================= TYPING EFFECT ================= */
 
-const typingText = document.getElementById("typing");
+const typingElement = document.getElementById("typing");
 
 const words = [
     "Web Developer",
-    "HTML Developer",
-    "CSS Developer",
-    "Frontend Developer"
+    "Frontend Developer",
+    "Website Designer"
 ];
 
 let wordIndex = 0;
-let letterIndex = 0;
+let charIndex = 0;
 let deleting = false;
 
-
-function typeEffect() {
+function typingEffect() {
 
     const currentWord = words[wordIndex];
 
-    if (deleting) {
+    if (!deleting) {
 
-        typingText.textContent =
-            currentWord.substring(0, letterIndex - 1);
+        typingElement.textContent =
+            currentWord.substring(0, charIndex + 1);
 
-        letterIndex--;
+        charIndex++;
 
-    } else {
+        if (charIndex === currentWord.length) {
 
-        typingText.textContent =
-            currentWord.substring(0, letterIndex + 1);
+            deleting = true;
 
-        letterIndex++;
-    }
+            setTimeout(typingEffect, 1500);
 
-
-    let speed = deleting ? 70 : 120;
-
-
-    if (!deleting && letterIndex === currentWord.length) {
-
-        speed = 1500;
-
-        deleting = true;
-    }
-
-
-    if (deleting && letterIndex === 0) {
-
-        deleting = false;
-
-        wordIndex++;
-
-        if (wordIndex === words.length) {
-            wordIndex = 0;
+            return;
         }
 
-        speed = 500;
-    }
-
-
-    setTimeout(typeEffect, speed);
-}
-
-
-typeEffect();
-
-
-
-/* ================= DARK MODE ================= */
-
-const themeBtn = document.getElementById("themeBtn");
-
-
-themeBtn.addEventListener("click", function () {
-
-    document.body.classList.toggle("dark");
-
-
-    if (document.body.classList.contains("dark")) {
-
-        themeBtn.textContent = "☀️";
-
     } else {
 
-        themeBtn.textContent = "🌙";
+        typingElement.textContent =
+            currentWord.substring(0, charIndex - 1);
+
+        charIndex--;
+
+        if (charIndex === 0) {
+
+            deleting = false;
+
+            wordIndex++;
+
+            if (wordIndex === words.length) {
+                wordIndex = 0;
+            }
+        }
     }
 
-});
+    setTimeout(
+        typingEffect,
+        deleting ? 60 : 100
+    );
+}
 
+typingEffect();
 
 
 /* ================= MOBILE MENU ================= */
 
 const menuBtn = document.getElementById("menuBtn");
-
 const navbar = document.getElementById("navbar");
-
 
 menuBtn.addEventListener("click", function () {
 
@@ -104,11 +72,8 @@ menuBtn.addEventListener("click", function () {
 });
 
 
-
-/* ================= CLOSE MENU ================= */
-
-const navLinks = document.querySelectorAll("nav a");
-
+const navLinks =
+    document.querySelectorAll("#navbar a");
 
 navLinks.forEach(function (link) {
 
@@ -121,11 +86,32 @@ navLinks.forEach(function (link) {
 });
 
 
+/* ================= DARK MODE ================= */
+
+const themeBtn =
+    document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click", function () {
+
+    document.body.classList.toggle("dark");
+
+    if (document.body.classList.contains("dark")) {
+
+        themeBtn.textContent = "☀️";
+
+    } else {
+
+        themeBtn.textContent = "🌙";
+
+    }
+
+});
+
 
 /* ================= SCROLL ANIMATION ================= */
 
-const sections = document.querySelectorAll("section");
-
+const sections =
+    document.querySelectorAll("section");
 
 function showSections() {
 
@@ -137,7 +123,6 @@ function showSections() {
         const windowHeight =
             window.innerHeight;
 
-
         if (sectionTop < windowHeight - 100) {
 
             section.classList.add("show");
@@ -148,24 +133,22 @@ function showSections() {
 
 }
 
-
 window.addEventListener("scroll", showSections);
 
 showSections();
 
 
-
 /* ================= CONTACT FORM ================= */
 
-const contactForm = document.getElementById("contactForm");
+const contactForm =
+    document.getElementById("contactForm");
 
-const formMessage = document.getElementById("formMessage");
-
+const formMessage =
+    document.getElementById("formMessage");
 
 contactForm.addEventListener("submit", function (event) {
 
     event.preventDefault();
-
 
     const name =
         document.getElementById("name").value.trim();
@@ -177,7 +160,11 @@ contactForm.addEventListener("submit", function (event) {
         document.getElementById("message").value.trim();
 
 
-    if (name === "" || email === "" || message === "") {
+    if (
+        name === "" ||
+        email === "" ||
+        message === ""
+    ) {
 
         formMessage.textContent =
             "Please fill in all fields.";
@@ -188,12 +175,29 @@ contactForm.addEventListener("submit", function (event) {
     }
 
 
+    const subject =
+        encodeURIComponent(
+            "Website Enquiry from " + name
+        );
+
+    const body =
+        encodeURIComponent(
+            "Name: " + name +
+            "\nEmail: " + email +
+            "\n\nMessage:\n" + message
+        );
+
+
+    window.location.href =
+        "mailto:aashimashi8714@gmail.com" +
+        "?subject=" + subject +
+        "&body=" + body;
+
+
     formMessage.textContent =
-        "Thank you! Your message is ready to send.";
+        "Opening your email app...";
 
-    formMessage.style.color = "#00adb5";
-
-
-    contactForm.reset();
+    formMessage.style.color =
+        "#00adb5";
 
 });

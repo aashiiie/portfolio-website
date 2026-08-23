@@ -329,19 +329,21 @@ section h2 {
 /* ================= PROJECTS ================= */
 
 .projects-container {
-    display: flex;
+    max-width: 1100px;
 
-    justify-content: center;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
 
     gap: 25px;
-
-    flex-wrap: wrap;
 }
 
 .project {
     background-color: white;
 
-    width: 300px;
+    width: 100%;
 
     padding: 30px;
 
@@ -461,6 +463,8 @@ section h2 {
 }
 
 .email-link {
+    display: block;
+
     color: #00adb5;
 
     text-decoration: none;
@@ -473,6 +477,32 @@ section h2 {
 .email-link:hover {
     color: #007b80;
 }
+
+
+/* ================= WHATSAPP ================= */
+
+.whatsapp-link {
+    display: block;
+
+    color: #00adb5;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    margin-top: 15px;
+
+    transition: 0.3s;
+}
+
+.whatsapp-link:hover {
+    color: #007b80;
+
+    transform: translateX(4px);
+}
+
+
+/* ================= SOCIAL LINKS ================= */
 
 .social-links {
     display: flex;
@@ -626,6 +656,14 @@ body.dark .project-tags span {
 
 /* ================= MOBILE ================= */
 
+@media (max-width: 1000px) {
+
+    .projects-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
 @media (max-width: 800px) {
 
     header {
@@ -642,6 +680,7 @@ body.dark .project-tags span {
         position: absolute;
 
         top: 70px;
+
         left: 0;
 
         width: 100%;
@@ -676,6 +715,7 @@ body.dark .project-tags span {
 
     .profile-img {
         width: 190px;
+
         height: 190px;
     }
 
@@ -708,5 +748,13 @@ body.dark .project-tags span {
     .contact-info,
     #contactForm {
         padding: 25px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .projects-container {
+        grid-template-columns: 1fr;
     }
 }
