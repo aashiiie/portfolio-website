@@ -1,11 +1,11 @@
-/* ================= TYPING EFFECT ================= */
+// TYPING ANIMATION
 
 const typingElement = document.getElementById("typing");
 
 const words = [
-    "Web Developer",
-    "Frontend Developer",
-    "Website Designer"
+  "Frontend Developer",
+  "Web Developer",
+  "Website Designer"
 ];
 
 let wordIndex = 0;
@@ -14,190 +14,174 @@ let deleting = false;
 
 function typingEffect() {
 
-    const currentWord = words[wordIndex];
+  if (!typingElement) return;
 
-    if (!deleting) {
+  const word = words[wordIndex];
 
-        typingElement.textContent =
-            currentWord.substring(0, charIndex + 1);
+  typingElement.textContent = word.substring(
+    0,
+    charIndex + (deleting ? -1 : 1)
+  );
 
-        charIndex++;
+  charIndex += deleting ? -1 : 1;
 
-        if (charIndex === currentWord.length) {
+  let delay = deleting ? 55 : 95;
 
-            deleting = true;
+  if (!deleting && charIndex === word.length) {
 
-            setTimeout(typingEffect, 1500);
+    deleting = true;
+    delay = 1400;
 
-            return;
-        }
+  } else if (deleting && charIndex === 0) {
 
-    } else {
+    deleting = false;
+    wordIndex = (wordIndex + 1) % words.length;
+    delay = 350;
 
-        typingElement.textContent =
-            currentWord.substring(0, charIndex - 1);
+  }
 
-        charIndex--;
-
-        if (charIndex === 0) {
-
-            deleting = false;
-
-            wordIndex++;
-
-            if (wordIndex === words.length) {
-                wordIndex = 0;
-            }
-        }
-    }
-
-    setTimeout(
-        typingEffect,
-        deleting ? 60 : 100
-    );
+  window.setTimeout(typingEffect, delay);
 }
 
 typingEffect();
 
 
-/* ================= MOBILE MENU ================= */
+// MOBILE NAVIGATION
 
 const menuBtn = document.getElementById("menuBtn");
 const navbar = document.getElementById("navbar");
 
-menuBtn.addEventListener("click", function () {
+if (menuBtn && navbar) {
 
-    navbar.classList.toggle("active");
+  menuBtn.addEventListener("click", () => {
 
-});
+    const isOpen = navbar.classList.toggle("active");
 
+    menuBtn.setAttribute("aria-expanded", String(isOpen));
 
-const navLinks =
-    document.querySelectorAll("#navbar a");
+    menuBtn.textContent = isOpen ? "✕" : "☰";
 
-navLinks.forEach(function (link) {
+  });
 
-    link.addEventListener("click", function () {
+  navbar.querySelectorAll("a").forEach(link => {
 
-        navbar.classList.remove("active");
+    link.addEventListener("click", () => {
 
-    });
+      navbar.classList.remove("active");
 
-});
+      menuBtn.setAttribute("aria-expanded", "false");
 
-
-/* ================= DARK MODE ================= */
-
-const themeBtn =
-    document.getElementById("themeBtn");
-
-themeBtn.addEventListener("click", function () {
-
-    document.body.classList.toggle("dark");
-
-    if (document.body.classList.contains("dark")) {
-
-        themeBtn.textContent = "☀️";
-
-    } else {
-
-        themeBtn.textContent = "🌙";
-
-    }
-
-});
-
-
-/* ================= SCROLL ANIMATION ================= */
-
-const sections =
-    document.querySelectorAll("section");
-
-function showSections() {
-
-    sections.forEach(function (section) {
-
-        const sectionTop =
-            section.getBoundingClientRect().top;
-
-        const windowHeight =
-            window.innerHeight;
-
-        if (sectionTop < windowHeight - 100) {
-
-            section.classList.add("show");
-
-        }
+      menuBtn.textContent = "☰";
 
     });
+
+  });
 
 }
 
-window.addEventListener("scroll", showSections);
 
-showSections();
+// SCROLL REVEAL ANIMATION
+
+const revealItems = document.querySelectorAll(".reveal");
+
+if ("IntersectionObserver" in window) {
+
+  const observer = new IntersectionObserver((entries, obs) => {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+
+        entry.target.classList.add("visible");
+
+        obs.unobserve(entry.target);
+
+      }
+
+    });
+
+  }, {
+    threshold: 0.12
+  });
+
+  revealItems.forEach(item => observer.observe(item));
+
+} else {
+
+  revealItems.forEach(item => item.classList.add("visible"));
+
+}
 
 
-/* ================= CONTACT FORM ================= */
+// ACTIVE NAVIGATION SECTION
 
-const contactForm =
-    document.getElementById("contactForm");
+const sections = document.querySelectorAll("main section[id]");
+const navLinks = document.querySelectorAll(".nav-link");
 
-const formMessage =
-    document.getElementById("formMessage");
+if ("IntersectionObserver" in window) {
 
-contactForm.addEventListener("submit", function (event) {
+  const sectionObserver = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+
+        navLinks.forEach(link => {
+
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === `#${entry.target.id}`
+          );
+
+        });
+
+      }
+
+    });
+
+  }, {
+    rootMargin: "-35% 0px -55% 0px"
+  });
+
+  sections.forEach(section => sectionObserver.observe(section));
+
+}
+
+
+// CONTACT FORM
+
+const contactForm = document.getElementById("contactForm");
+const formMessage = document.getElementById("formMessage");
+
+if (contactForm) {
+
+  contactForm.addEventListener("submit", event => {
 
     event.preventDefault();
 
-    const name =
-        document.getElementById("name").value.trim();
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
 
-    const email =
-        document.getElementById("email").value.trim();
+    if (!name || !email || !message) {
 
-    const message =
-        document.getElementById("message").value.trim();
+      formMessage.textContent = "Please fill in all fields.";
 
+      return;
 
-    if (
-        name === "" ||
-        email === "" ||
-        message === ""
-    ) {
-
-        formMessage.textContent =
-            "Please fill in all fields.";
-
-        formMessage.style.color = "red";
-
-        return;
     }
 
+    const subject = encodeURIComponent(`Website enquiry from ${name}`);
 
-    const subject =
-        encodeURIComponent(
-            "Website Enquiry from " + name
-        );
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    );
 
-    const body =
-        encodeURIComponent(
-            "Name: " + name +
-            "\nEmail: " + email +
-            "\n\nMessage:\n" + message
-        );
-
+    formMessage.textContent = "Opening your email application...";
 
     window.location.href =
-        "mailto:aashimashi8714@gmail.com" +
-        "?subject=" + subject +
-        "&body=" + body;
+      `mailto:aashimashi8714@gmail.com?subject=${subject}&body=${body}`;
 
+  });
 
-    formMessage.textContent =
-        "Opening your email app...";
-
-    formMessage.style.color =
-        "#00adb5";
-
-});
+}

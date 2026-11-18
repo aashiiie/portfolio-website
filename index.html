@@ -4,172 +4,385 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080711">
 
-    <title>Aashimashi | Web Developer</title>
+    <meta name="description" content="Ashim - Frontend Web Developer Portfolio">
+
+    <title>Ashim | Digital Creator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <!-- ================= HEADER ================= -->
+    <!-- BACKGROUND EFFECTS -->
 
-    <header>
+    <div class="noise"></div>
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <div class="starfield"></div>
 
-        <h1>Aashimashi</h1>
 
-        <nav id="navbar">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+        <a class="brand" href="#home">
+            <span class="brand-mark">A</span>
+            <span>ASHIM<span class="brand-dot">.</span></span>
+        </a>
+
+        <nav id="navbar" class="navbar">
+
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+
         </nav>
 
-        <div class="header-buttons">
-            <button id="themeBtn">🌙</button>
-            <button id="menuBtn">☰</button>
+        <div class="header-actions">
+
+            <a class="availability" href="#contact">
+                <span></span>
+                Available for work
+            </a>
+
+            <button id="menuBtn" class="menu-btn">
+                ☰
+            </button>
+
         </div>
 
     </header>
 
 
-    <!-- ================= HOME ================= -->
+    <main>
 
-    <section class="home" id="home">
+        <!-- HERO SECTION -->
 
-        <div class="home-image">
+        <section class="hero" id="home">
 
-            <img src="profile.jpg"
-                 alt="Aashimashi Profile"
-                 class="profile-img">
+            <div class="hero-copy reveal">
 
-        </div>
+                <p class="eyebrow">
+                    <span class="eyebrow-line"></span>
+                    THE DIGITAL REALM OF ASHIM
+                </p>
 
-        <div class="home-content">
+                <h1>
+                    Crafting digital<br>
+                    worlds with
+                    <span class="gradient-text">purpose.</span>
+                </h1>
 
-            <p class="welcome">
-                WELCOME TO MY PORTFOLIO
-            </p>
+                <h2 class="role-line">
+                    I'm a <span id="typing"></span><span class="typing-cursor">|</span>
+                </h2>
 
-            <h2>
-                Hello, I'm <span>Aashimashi</span>
-            </h2>
+                <p class="hero-description">
+                    I create clean, modern and responsive websites
+                    with thoughtful details, smooth interactions
+                    and a little bit of magic.
+                </p>
 
-            <h3>
-                I'm a <span id="typing"></span>
-            </h3>
+                <div class="hero-actions">
 
-            <p class="intro">
-                I create clean, modern and responsive websites
-                using HTML, CSS and JavaScript.
-            </p>
+                    <a href="#projects" class="button button-primary">
+                        Explore my work <span>↗</span>
+                    </a>
 
-            <div class="home-buttons">
+                    <a href="#contact" class="button button-ghost">
+                        Let's talk <span>✦</span>
+                    </a>
 
-                <a href="#contact" class="btn">
-                    Contact Me
-                </a>
+                </div>
 
-                <a href="#projects" class="btn secondary-btn">
-                    View My Work
-                </a>
+                <div class="hero-meta">
+
+                    <span>BASED IN INDIA</span>
+                    <i></i>
+                    <span>BUILDING FOR THE WEB</span>
+
+                </div>
 
             </div>
 
-        </div>
 
-    </section>
+            <!-- GALAXY PORTAL + PROFILE PHOTO -->
 
+            <div class="hero-art">
 
-    <!-- ================= ABOUT ================= -->
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
 
-    <section id="about">
+                <div class="portal">
 
-        <h2>About Me</h2>
+                    <div class="portal-core"></div>
+                    <div class="portal-ring"></div>
+                    <div class="portal-shine"></div>
 
-        <div class="about-box">
-
-            <h3>Hi, I'm Aashimashi 👋</h3>
-
-            <p>
-                I'm a front-end web developer specializing in building
-                clean, responsive,and user-friendly websites using HTML,
-                CSS, and JavaScript.
-                From business sites to e-commerce platforms and
-                API-integrated applications, I focus on writing structured
-                code and creating interfaces that are both functional and
-                visually polished.
-                I'm constantly expanding my skill set and enjoy taking on
-                new challenges that push my development abilities forward.
-            </p>
-
-        </div>
-
-    </section>
+                </div>
 
 
-    <!-- ================= SKILLS ================= -->
+                <!-- YOUR PROFILE PHOTO -->
 
-    <section id="skills">
+                <div class="profile-photo">
 
-        <h2>My Skills</h2>
 
-        <div class="skills-container">
+                </div>
 
-            <div class="skill">
-                <div class="skill-icon">🌐</div>
-                <h3>HTML</h3>
-                <p>Web Structure</p>
+
+                <div class="floating-card card-top">
+
+                    <span class="mini-icon">✧</span>
+
+                    <span>
+                        Creative<br>
+                        Development
+                    </span>
+
+                </div>
+
+
+                <div class="floating-card card-bottom">
+
+                    <span class="status-dot"></span>
+
+                    <span>
+                        Turning ideas<br>
+                        into reality
+                    </span>
+
+                </div>
+
+
+                <div class="art-caption">
+                    FIG. 01 — THE CREATIVE MIND
+                </div>
+
             </div>
 
-            <div class="skill">
-                <div class="skill-icon">🎨</div>
-                <h3>CSS</h3>
-                <p>Web Design</p>
+
+            <a href="#about" class="scroll-cue">
+
+                <span></span>
+                SCROLL TO EXPLORE
+
+            </a>
+
+        </section>
+
+
+
+        <!-- ABOUT SECTION -->
+
+        <section id="about" class="section about-section">
+
+            <div class="section-heading reveal">
+
+                <p class="eyebrow">01 / THE STORY</p>
+
+                <h2>
+                    A little about
+                    <span class="gradient-text">me.</span>
+                </h2>
+
             </div>
 
-            <div class="skill">
-                <div class="skill-icon">⚡</div>
-                <h3>JavaScript</h3>
-                <p>Interactivity</p>
+
+            <div class="about-grid">
+
+                <div class="about-symbol reveal">
+
+                    <div class="symbol-orbit">
+                        <span>A</span>
+                    </div>
+
+                    <p>
+                        CURIOUS BY NATURE.<br>
+                        BUILDER BY CHOICE.
+                    </p>
+
+                </div>
+
+
+                <div class="about-card glass-card reveal">
+
+                    <p class="card-kicker">
+                        HELLO, WORLD 👋
+                    </p>
+
+                    <h3>
+                        I'm Ashim, a frontend web developer.
+                    </h3>
+
+                    <p>
+                        I’m a passionate Frontend Web Developer who enjoys
+                        creating clean, modern, and responsive websites
+                        with a focus on user-friendly design and smooth
+                        web experiences.
+                    </p>
+
+                    <p>
+                        I work with HTML, CSS, and JavaScript to build
+                        responsive and interactive websites. I also have
+                        a strong foundation in C programming and
+                        continuously improve my development skills
+                        through hands-on projects and practical learning.
+                    </p>
+
+                    <p>
+                        I enjoy turning ideas into functional, visually
+                        appealing websites that provide a great experience
+                        across desktop, tablet, and mobile devices.
+                    </p>
+
+                    <a href="#contact" class="text-link">
+
+                        Have a project in mind?
+
+                        <span>Let's connect ↗</span>
+
+                    </a>
+
+                </div>
+
             </div>
 
-            <div class="skill">
-                <div class="skill-icon">💻</div>
-                <h3>C Programming</h3>
-                <p>Programming Basics</p>
+        </section>
+
+
+
+        <!-- SKILLS SECTION -->
+
+        <section id="skills" class="section skills-section">
+
+            <div class="section-heading reveal">
+
+                <p class="eyebrow">02 / MY TOOLKIT</p>
+
+                <h2>
+                    Skills &
+                    <span class="gradient-text">craft.</span>
+                </h2>
+
+                <p class="section-subtitle">
+                    The tools I use to bring ideas to life.
+                </p>
+
             </div>
 
-        </div>
 
-    </section>
-
-
-    <!-- ================= PROJECTS ================= -->
-
-    <section id="projects">
-
-        <h2>My Projects</h2>
-
-        <div class="projects-container">
+            <div class="skills-grid">
 
 
-            <!-- 01 BUSINESS -->
+                <article class="skill-card glass-card reveal">
 
-            <div class="project">
+                    <span class="skill-number">01</span>
 
-                <div class="project-top">
+                    <div class="skill-icon">⌘</div>
+
+                    <h3>HTML</h3>
+
+                    <p>Web structure</p>
+
+                    <div class="skill-track">
+                        <span style="width:90%"></span>
+                    </div>
+
+                </article>
+
+
+
+                <article class="skill-card glass-card reveal">
+
+                    <span class="skill-number">02</span>
+
+                    <div class="skill-icon">✳</div>
+
+                    <h3>CSS</h3>
+
+                    <p>Visual design</p>
+
+                    <div class="skill-track">
+                        <span style="width:85%"></span>
+                    </div>
+
+                </article>
+
+
+
+                <article class="skill-card glass-card reveal">
+
+                    <span class="skill-number">03</span>
+
+                    <div class="skill-icon">⟡</div>
+
+                    <h3>JavaScript</h3>
+
+                    <p>Web interactions</p>
+
+                    <div class="skill-track">
+                        <span style="width:75%"></span>
+                    </div>
+
+                </article>
+
+
+
+                <article class="skill-card glass-card reveal">
+
+                    <span class="skill-number">04</span>
+
+                    <div class="skill-icon">⌘</div>
+
+                    <h3>C Programming</h3>
+
+                    <p>Programming basics</p>
+
+                    <div class="skill-track">
+                        <span style="width:65%"></span>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PROJECTS SECTION -->
+
+        <section id="projects" class="section projects-section">
+
+            <div class="projects-grid">
+
+        <!-- PROJECT 1 -->
+
+        <article class="project-card reveal">
+
+            <div class="project-visual visual-business">
+                <span class="visual-index">PROJECT / 01</span>
+                <span class="visual-symbol">◈</span>
+                <span class="visual-label">BUSINESS</span>
+            </div>
+
+            <div class="project-info">
+                <div class="project-title-row">
+                    <h3>Business Website</h3>
                     <span>01</span>
-                    <span>🌐</span>
                 </div>
 
-                <h3>Business Website</h3>
-
-                <p>
-                    A clean and responsive business website
-                    designed with a modern professional layout.
-                </p>
+                <p>A clean and responsive business website with a modern professional layout.</p>
 
                 <div class="project-tags">
                     <span>HTML</span>
@@ -177,30 +390,31 @@
                     <span>JS</span>
                 </div>
 
-                <a href="https://aashiiie.github.io/business-website/"
-                   target="_blank"
-                   class="project-btn">
-                    Live Demo →
+                <a href="https://aashiiie.github.io/business-website/" target="_blank" rel="noopener noreferrer" class="project-link">
+                    View live project <span>↗</span>
                 </a>
-
             </div>
 
+        </article>
 
-            <!-- 02 RESTAURANT -->
 
-            <div class="project">
+        <!-- PROJECT 2 -->
 
-                <div class="project-top">
+        <article class="project-card reveal">
+
+            <div class="project-visual visual-restaurant">
+                <span class="visual-index">PROJECT / 02</span>
+                <span class="visual-symbol">✺</span>
+                <span class="visual-label">MALABAR ROYALE</span>
+            </div>
+
+            <div class="project-info">
+                <div class="project-title-row">
+                    <h3>Restaurant Website</h3>
                     <span>02</span>
-                    <span>🍽️</span>
                 </div>
 
-                <h3>Restaurant Website</h3>
-
-                <p>
-                    An elegant restaurant website designed
-                    with a premium dining experience in mind.
-                </p>
+                <p>An elegant restaurant website designed with a premium dining experience.</p>
 
                 <div class="project-tags">
                     <span>HTML</span>
@@ -208,30 +422,31 @@
                     <span>JS</span>
                 </div>
 
-                <a href="https://aashiiie.github.io/malabar-royale-restaurant/"
-                   target="_blank"
-                   class="project-btn">
-                    Live Demo →
+                <a href="https://aashiiie.github.io/malabar-royale-restaurant/" target="_blank" rel="noopener noreferrer" class="project-link">
+                    View live project <span>↗</span>
                 </a>
-
             </div>
 
+        </article>
 
-            <!-- 03 E-COMMERCE -->
 
-            <div class="project">
+        <!-- PROJECT 3 -->
 
-                <div class="project-top">
+        <article class="project-card reveal">
+
+            <div class="project-visual visual-shop">
+                <span class="visual-index">PROJECT / 03</span>
+                <span class="visual-symbol">✧</span>
+                <span class="visual-label">URBANCART</span>
+            </div>
+
+            <div class="project-info">
+                <div class="project-title-row">
+                    <h3>E-commerce Website</h3>
                     <span>03</span>
-                    <span>🛍️</span>
                 </div>
 
-                <h3>E-commerce Website</h3>
-
-                <p>
-                    A professional online shopping website
-                    with products, responsive design and interactions.
-                </p>
+                <p>A modern online shopping website with products and responsive design.</p>
 
                 <div class="project-tags">
                     <span>HTML</span>
@@ -239,30 +454,31 @@
                     <span>JS</span>
                 </div>
 
-                <a href="https://aashiiie.github.io/urbancart-shop/"
-                   target="_blank"
-                   class="project-btn">
-                    Live Demo →
+                <a href="https://aashiiie.github.io/urbancart-shop/" target="_blank" rel="noopener noreferrer" class="project-link">
+                    View live project <span>↗</span>
                 </a>
-
             </div>
 
+        </article>
 
-            <!-- 04 REAL ESTATE -->
 
-            <div class="project">
+        <!-- PROJECT 4 -->
 
-                <div class="project-top">
+        <article class="project-card reveal">
+
+            <div class="project-visual visual-estate">
+                <span class="visual-index">PROJECT / 04</span>
+                <span class="visual-symbol">⌂</span>
+                <span class="visual-label">REAL ESTATE</span>
+            </div>
+
+            <div class="project-info">
+                <div class="project-title-row">
+                    <h3>Real Estate Website</h3>
                     <span>04</span>
-                    <span>🏠</span>
                 </div>
 
-                <h3>Real Estate Website</h3>
-
-                <p>
-                    A premium real estate website featuring
-                    luxury properties and a modern responsive layout.
-                </p>
+                <p>A premium real estate website featuring luxury properties and modern design.</p>
 
                 <div class="project-tags">
                     <span>HTML</span>
@@ -270,30 +486,31 @@
                     <span>JS</span>
                 </div>
 
-                <a href="https://aashiiie.github.io/real-estate-website/"
-                   target="_blank"
-                   class="project-btn">
-                    Live Demo →
+                <a href="https://aashiiie.github.io/real-estate-website/" target="_blank" rel="noopener noreferrer" class="project-link">
+                    View live project <span>↗</span>
                 </a>
-
             </div>
 
+        </article>
 
-            <!-- 05 LUXORA SALON -->
 
-            <div class="project">
+        <!-- PROJECT 5 -->
 
-                <div class="project-top">
+        <article class="project-card reveal">
+
+            <div class="project-visual visual-salon">
+                <span class="visual-index">PROJECT / 05</span>
+                <span class="visual-symbol">❋</span>
+                <span class="visual-label">LUXORA</span>
+            </div>
+
+            <div class="project-info">
+                <div class="project-title-row">
+                    <h3>Luxora Salon</h3>
                     <span>05</span>
-                    <span>💇‍♀️</span>
                 </div>
 
-                <h3>Luxora Salon</h3>
-
-                <p>
-                    A luxury salon and beauty website with
-                    elegant styling, service sections and responsive design.
-                </p>
+                <p>A luxury salon website with elegant styling and responsive design.</p>
 
                 <div class="project-tags">
                     <span>HTML</span>
@@ -301,31 +518,31 @@
                     <span>JS</span>
                 </div>
 
-                <a href="https://aashiiie.github.io/luxora-salon/"
-                   target="_blank"
-                   class="project-btn">
-                    Live Demo →
+                <a href="https://aashiiie.github.io/luxora-salon/" target="_blank" rel="noopener noreferrer" class="project-link">
+                    View live project <span>↗</span>
                 </a>
-
             </div>
 
+        </article>
 
-            <!-- 06 THE VOGUE -->
 
-            <div class="project">
+        <!-- PROJECT 6 -->
 
-                <div class="project-top">
+        <article class="project-card reveal">
+
+            <div class="project-visual visual-vogue">
+                <span class="visual-index">PROJECT / 06</span>
+                <span class="visual-symbol">✧</span>
+                <span class="visual-label">THE VOGUE</span>
+            </div>
+
+            <div class="project-info">
+                <div class="project-title-row">
+                    <h3>The Vogue Curation</h3>
                     <span>06</span>
-                    <span>👗</span>
                 </div>
 
-                <h3>The Vogue Curation</h3>
-
-                <p>
-                    A stylish and modern fashion website designed
-                    to showcase curated collections with an elegant
-                    and responsive user experience.
-                </p>
+                <p>A stylish fashion website showcasing curated collections.</p>
 
                 <div class="project-tags">
                     <span>HTML</span>
@@ -333,31 +550,31 @@
                     <span>JS</span>
                 </div>
 
-                <a href="https://aashiiie.github.io/the_vogue_website/"
-                   target="_blank"
-                   class="project-btn">
-                    Live Demo →
+                <a href="https://aashiiie.github.io/the_vogue_website/" target="_blank" rel="noopener noreferrer" class="project-link">
+                    View live project <span>↗</span>
                 </a>
-
             </div>
 
+        </article>
 
-            <!-- 07 WEATHER APP -->
 
-            <div class="project">
+        <!-- PROJECT 7 -->
 
-                <div class="project-top">
+        <article class="project-card reveal">
+
+            <div class="project-visual visual-guitar">
+                <span class="visual-index">PROJECT / 07</span>
+                <span class="visual-symbol">♫</span>
+                <span class="visual-label">GUITAR CHALLENGE</span>
+            </div>
+
+            <div class="project-info">
+                <div class="project-title-row">
+                    <h3>Guitar Challenge</h3>
                     <span>07</span>
-                    <span>🌦️</span>
                 </div>
 
-                <h3>Weather App</h3>
-
-                <p>
-                    A real-time weather app using OpenWeatherMap API
-                    to fetch live temperature, humidity and wind data
-                    for any city.
-                </p>
+                <p>A guitar-themed web project with an interactive experience.</p>
 
                 <div class="project-tags">
                     <span>HTML</span>
@@ -365,31 +582,31 @@
                     <span>JS</span>
                 </div>
 
-                <a href="https://aashiiie.github.io/weather-app/"
-                   target="_blank"
-                   class="project-btn">
-                    Live Demo →
+                <a href="https://aashiiie.github.io/Guitar-Challange/" target="_blank" rel="noopener noreferrer" class="project-link">
+                    View live project <span>↗</span>
                 </a>
-
             </div>
 
+        </article>
 
-            <!-- 08 THE SMOKE SHOP -->
 
-            <div class="project">
+        <!-- PROJECT 8 -->
 
-                <div class="project-top">
+        <article class="project-card reveal">
+
+            <div class="project-visual visual-smoke">
+                <span class="visual-index">PROJECT / 08</span>
+                <span class="visual-symbol">◉</span>
+                <span class="visual-label">SMOKE SHOP</span>
+            </div>
+
+            <div class="project-info">
+                <div class="project-title-row">
+                    <h3>Smoke Shop</h3>
                     <span>08</span>
-                    <span>🚬</span>
                 </div>
 
-                <h3>The Smoke Shop</h3>
-
-                <p>
-                    A modern lifestyle store website featuring
-                    elegant sections, curated collections and
-                    a clean responsive design.
-                </p>
+                <p>A modern shop website with a distinctive visual style.</p>
 
                 <div class="project-tags">
                     <span>HTML</span>
@@ -397,31 +614,31 @@
                     <span>JS</span>
                 </div>
 
-                <a href="https://aashiiie.github.io/Smoke-Shop/"
-                   target="_blank"
-                   class="project-btn">
-                    Live Demo →
+                <a href="https://aashiiie.github.io/Smoke-Shop/" target="_blank" rel="noopener noreferrer" class="project-link">
+                    View live project <span>↗</span>
                 </a>
-
             </div>
 
+        </article>
 
-            <!-- 09 GUITAR CHALLENGE -->
 
-            <div class="project">
+        <!-- PROJECT 9 -->
 
-                <div class="project-top">
+        <article class="project-card reveal">
+
+            <div class="project-visual visual-norden">
+                <span class="visual-index">PROJECT / 09</span>
+                <span class="visual-symbol">❋</span>
+                <span class="visual-label">NORDEN AGRI</span>
+            </div>
+
+            <div class="project-info">
+                <div class="project-title-row">
+                    <h3>Norden Agri</h3>
                     <span>09</span>
-                    <span>🎸</span>
                 </div>
 
-                <h3>Guitar Challenge</h3>
-
-                <p>
-                    An interactive guitar-themed web experience
-                    with a modern interface, responsive design
-                    and engaging user interactions.
-                </p>
+                <p>An agriculture-themed website with a clean and modern presentation.</p>
 
                 <div class="project-tags">
                     <span>HTML</span>
@@ -429,124 +646,208 @@
                     <span>JS</span>
                 </div>
 
-                <a href="https://aashiiie.github.io/Guitar-Challange/"
-                   target="_blank"
-                   class="project-btn">
-                    Live Demo →
+                <a href="https://aashiiie.github.io/norden-agri/" target="_blank" rel="noopener noreferrer" class="project-link">
+                    View live project <span>↗</span>
                 </a>
-
             </div>
 
+        </article>
+        <!-- PROJECT 10 -->
 
+<article class="project-card reveal">
+
+    <div class="project-visual visual-business">
+        <span class="visual-index">PROJECT / 10</span>
+        <span class="visual-symbol">✦</span>
+        <span class="visual-label">AUREX MOTORS</span>
+    </div>
+
+    <div class="project-info">
+        <div class="project-title-row">
+            <h3>AUREX Motors</h3>
+            <span>10</span>
         </div>
 
-    </section>
+        <p>
+            A premium luxury car showroom website featuring an
+            immersive video hero, car collections and elegant interactions.
+        </p>
+
+        <div class="project-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+        </div>
+
+        <a href="https://aashiiie.github.io/car-showroom/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="project-link">
+            View live project <span>↗</span>
+        </a>
+    </div>
+
+</article>
+
+    </div>
 
 
-    <!-- ================= CONTACT ================= -->
+    <div class="projects-note reveal">
+        <span>✦</span>
+        MORE IDEAS. MORE BUILDS. ALWAYS LEARNING.
+    </div>
 
-    <section id="contact">
+</section>
 
-        <h2>Contact Me</h2>
 
-        <div class="contact-container">
+   
 
-            <div class="contact-info">
+        </section>
 
-                <h3>Let's work together! 🤝</h3>
 
-                <p>
-                    Have a project in mind?
-                    Feel free to contact me.
-                </p>
 
-                <a href="mailto:aashimashi8714@gmail.com"
-                   class="email-link">
-                    📧 aashimashi8714@gmail.com
-                </a>
+        <!-- CONTACT SECTION -->
 
-                <a href="https://wa.me/918714858810"
-                   target="_blank"
-                   class="whatsapp-link">
-                    💬 WhatsApp: +91 87148 58810
-                </a>
+        <section id="contact" class="section contact-section">
 
-                <div class="social-links">
+            <div class="contact-panel reveal">
 
-                    <a href="https://github.com/aashiiie"
-                       target="_blank">
-                        GitHub
+
+                <div class="contact-copy">
+
+                    <p class="eyebrow">
+                        04 / THE NEXT CHAPTER
+                    </p>
+
+                    <h2>
+                        Have an idea?<br>
+                        <span class="gradient-text">Let's create it.</span>
+                    </h2>
+
+                    <p>
+                        Have a project in mind or just want to say hello?
+                        My inbox is always open.
+                    </p>
+
+
+                    <a href="mailto:aashimashi8714@gmail.com"
+                       class="contact-detail">
+
+                        ✉
+                        <span>aashimashi8714@gmail.com</span>
+
                     </a>
 
-                    <a href="#"
-                       target="_blank">
-                        LinkedIn
+
+                    <a href="https://wa.me/918714858810"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="contact-detail">
+
+                        ◉
+                        <span>WhatsApp: +91 87148 58810</span>
+
                     </a>
+
+
+                    <div class="social-links">
+
+                        <a href="https://github.com/aashiiie"
+                           target="_blank"
+                           rel="noopener noreferrer">
+
+                            GitHub ↗
+
+                        </a>
+
+                        <a href="#"
+                           target="_blank"
+                           rel="noopener noreferrer">
+
+                            LinkedIn ↗
+
+                        </a>
+
+                    </div>
 
                 </div>
 
-            </div>
 
 
-            <form id="contactForm">
+                <!-- CONTACT FORM -->
 
-                <input
-                    type="text"
-                    id="name"
-                    placeholder="Your Name"
-                    required>
+                <form id="contactForm" class="contact-form">
 
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="Your Email"
-                    required>
+                    <label for="name">YOUR NAME</label>
 
-                <textarea
-                    id="message"
-                    rows="6"
-                    placeholder="Your Message"
-                    required></textarea>
-
-                <button type="submit" class="btn">
-                    Send Message
-                </button>
-
-                <p id="formMessage"></p>
-
-            </form>
-
-        </div>
-
-    </section>
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="What should I call you?"
+                        required
+                    >
 
 
-    <!-- ================= FOOTER ================= -->
+                    <label for="email">EMAIL ADDRESS</label>
 
-    <footer>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="you@example.com"
+                        required
+                    >
 
-        <div class="footer-content">
 
-            <h3>Aashimashi</h3>
+                    <label for="message">YOUR MESSAGE</label>
 
-            <p>
-                Creating clean and modern websites.
-            </p>
+                    <textarea
+                        id="message"
+                        rows="5"
+                        placeholder="Tell me about your idea..."
+                        required
+                    ></textarea>
 
-            <div class="footer-links">
 
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
+                    <button type="submit" class="button button-primary">
+
+                        Send message <span>↗</span>
+
+                    </button>
+
+
+                    <p id="formMessage" role="status"></p>
+
+                </form>
 
             </div>
 
-        </div>
+        </section>
 
-        <p class="copyright">
-            © 2026 Aashimashi. All Rights Reserved.
+    </main>
+
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <a class="brand" href="#home">
+
+            <span class="brand-mark">A</span>
+
+            <span>ASHIM<span class="brand-dot">.</span></span>
+
+        </a>
+
+
+        <p>
+            Designed with curiosity. Built with purpose.
         </p>
+
+
+        <span class="copyright">
+            © 2026 Ashim. All rights reserved.
+        </span>
 
     </footer>
 
@@ -554,5 +855,4 @@
     <script src="script.js"></script>
 
 </body>
-
 </html>
